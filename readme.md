@@ -1,5 +1,5 @@
-# version1
-## version1.part1
+# version2
+## version2.part1
 
 Common包负责传输的中间信息 包括服务层的实现和对应信息的定义
 Client包负责发送调用信息
@@ -62,4 +62,22 @@ NettyRpcClient(调用clientproxy 负责代理接口)负责发
 ### part3
 引入zookeeper来管理连接(多个连接地址和端口)
 
-其他都不变 只是新增zookeeper的配置
+其他都没特别大的变化 只是新增zookeeper的配置 
+
+注意！！！  要将服务注册到zookeeper里面  根据服务名和接口地址创建节点
+
+# version2
+实现自定义编码器解码器 
+
+建立zookeeper本地缓存
+
+## part1
+没啥难的 就是文档没有说一些小变化 导致找BUG花了很多时间
+
+定义好了 新的序列化器后 然后定义新的解码器和编码器
+
+编码器要加入序列化方式等信息 不能只输入序列化的数据   解码器读到了之后才能调用对应函数来解码
+
+在netty初始化中加入新的解码器和编码器 
+## part2
+加入本地缓存
