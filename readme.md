@@ -1,5 +1,5 @@
-# version3
-## version3.part1
+# version1
+##  part1
 
 Common包负责传输的中间信息 包括服务层的实现和对应信息的定义
 Client包负责发送调用信息
@@ -66,7 +66,7 @@ NettyRpcClient(调用clientproxy 负责代理接口)负责发
 
 注意！！！  要将服务注册到zookeeper里面  根据服务名和接口地址创建节点
 
-# version3
+# version2
 实现自定义编码器解码器 
 
 建立zookeeper本地缓存
@@ -144,3 +144,5 @@ loadbalance接口  管理节点 来均衡负载
 ## part1
 限流   服务端
 常见的四种限流算法：计数器法 滑动窗口算法  漏桶算法  令牌桶算法
+
+本项目使用令牌桶算法
